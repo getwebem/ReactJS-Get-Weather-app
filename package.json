@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "ReactWeather",
   "version": "1.0.0",
   "description": "Simple react app",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Andrew Mead",
+  "author": "Kelvin Mbewe",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
