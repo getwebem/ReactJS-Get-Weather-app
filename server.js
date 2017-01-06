@@ -18,5 +18,5 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 
 app.listen(PORT, function () {
-  console.log('Express server is up on port ' + PORT);//heroku will tell us which localhost server to use
+  console.log('Express server is up on port ' + PORT);//heroku will tell us which localhost server to use, then we visit localhost:PORT
 });
