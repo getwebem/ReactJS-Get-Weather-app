@@ -43,7 +43,7 @@ handleSearch: function(location) {
     var {isLoading, temp, location} = this.state;
     function renderMessage() {
       if (isLoading) {
-        return <h3>Fetching weather...</h3>;
+        return <h3 className='text-center'>Fetching weather...</h3>;
 
     } else if (temp && location) {
       return <WeatherMessage temp={temp} location={location}/>;
@@ -57,7 +57,7 @@ handleSearch: function(location) {
       receive this error through the function (errorMessage)  */}
     return(
       <div>
-        <h3>Weather component</h3>
+        <h1 className='text-center'>Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         {/* (step 8.1 behind the scenes) when data is received
         from openWeatherMap.jsx the first thing react does process it through the onSearch={this.handleSearch}
