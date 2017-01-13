@@ -1,6 +1,7 @@
 var React = require('react');
 var WeatherForm = require('WeatherForm');
 var WeatherMessage = require('WeatherMessage');
+var ErrorModal = require('ErrorModal');
 var openWeatherMap = require('openWeatherMap');
 
 {/* We always load the react library first. Inside the Weather component we'll
@@ -25,22 +26,27 @@ var Weather = React.createClass({
 handleSearch: function(location) {
   var that = this;
 
-  this.setState({isLoading: true});
+  this.setState({
+    isLoading: true,
+    errorMessage: undefined
+  });
 
-  openWeatherMap.getTemp(location).then(function(temp) {
+  openWeatherMap.getTemp(location).then(function(objData) {
     that.setState({
-      location: location,
-      temp: temp,
+      location: objData.location,
+      temp: objData.temp,
       isLoading: false
     });
 
-}, function (errorMessage) {
-    that.setState({isLoading: false});
-    alert(errorMessage);
+}, function (e) {
+    that.setState({
+      isLoading: false,
+
+    });
 });
   },
   render: function () {
-    var {isLoading, temp, location} = this.state;
+    var {isLoading, temp, location, errorMessage} = this.state;
     function renderMessage() {
       if (isLoading) {
         return <h3 className='text-center'>Fetching weather...</h3>;
@@ -49,6 +55,15 @@ handleSearch: function(location) {
       return <WeatherMessage temp={temp} location={location}/>;
       }
     }
+
+    function renderError() {
+      if (typeof errorMessage === 'string') {
+        return (
+          <ErrorModal message={errorMessage}/>
+        );
+      }
+    }
+
 
     {/* (step 8.2 behind the scenes) the handleSearch: function above takes the data through the
       openWeatherMap.getTemp(location) and then makes some specifications that we only want to use
@@ -64,6 +79,7 @@ handleSearch: function(location) {
         and have the handleSearch: function above takes care of the rest. */}
 
         {renderMessage()}
+        {renderError()}
       </div>
     );
   }

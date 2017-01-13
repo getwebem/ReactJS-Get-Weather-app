@@ -20,15 +20,18 @@
           if (res.data.cod && res.data.message) {
             throw new Error(res.data.message);
           } else {
-            return res.data.main.temp;
+            return {
+              location: `${res.data.name}, ${res.data.sys.country}`,
+              temp: Math.floor(res.data.main.temp)
+            }
           }
-          {/* (step 6.1 behind the scenes) axios checks the respons [res] from the API through the requestUrl and check if the data about the city is
-            correct using (res.data.cod && res.data.message) and if its not correct axios should show and erroe message through Error(res.data.message)
-            and if there is no error axios should give the user the city temperature through res.data.main.temp */}
 
-        }, function(res) {
-              throw new Error(res.data.message);  {/* (step 6.2 behind the scenes) if the data from the API is corrupt/damaged axios should show an error to the user
-            through Error(res.data.message)  */}
+          {/* (step 6.1 behind the scenes) axios checks the respons [res] from the API through the requestUrl and check if the data about the city is
+            correct using location: `${res.data.name}, ${res.data.sys.country}`  if not correct axios shows an error message */}
+
+        }, function(err) {
+              throw new Error('Unable to fetch weather for that location');  {/* (step 6.2 behind the scenes) if the data from the API is corrupt/damaged axios throws an error
+            through Error(err.response.data.message)  */}
 
         });
       }
