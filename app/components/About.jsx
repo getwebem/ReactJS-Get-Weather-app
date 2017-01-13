@@ -6,7 +6,7 @@ var React = require('react');
 var About = (props) => {
   return(
     <div>
-      <h1 className='text-center'>About</h1>
+      <h1 className='text-center page-title'>About</h1>
         <p>Joker: You wanna know how I got these scars? My father was... a drinker,
           and a fiend. And one night, he goes off crazier than usual. Mommy gets the
           kitchen knife to defend herself. He doesn't like that, not one bit. So,

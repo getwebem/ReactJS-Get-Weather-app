@@ -18,7 +18,7 @@ var location = this.refs.location.value;  {/* (step 4.1 behind the scenes) at th
     return(
       <div>
         <form onSubmit={this.onFormSubmit}> {/* (step 3 behind the scenes) the form takes the click event using the ref="location" to the WeatherForm component */}
-          <input type="text" ref="location"/> {/* (step 1) the user types in the name of the city to get the weather e.g London */}
+          <input type="search" ref="location" placeholder='Search weather by city'/> {/* (step 1) the user types in the name of the city to get the weather e.g London */}
           <button className='button expanded hollow'>Get Weather</button> {/* (step 2) the user clicks/taps the Get Weather button */}
         </form>
       </div>

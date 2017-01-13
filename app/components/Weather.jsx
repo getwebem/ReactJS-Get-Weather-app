@@ -72,7 +72,7 @@ handleSearch: function(location) {
       receive this error through the function (errorMessage)  */}
     return(
       <div>
-        <h1 className='text-center'>Get Weather</h1>
+        <h1 className='text-center page-title'>Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         {/* (step 8.1 behind the scenes) when data is received
         from openWeatherMap.jsx the first thing react does process it through the onSearch={this.handleSearch}
