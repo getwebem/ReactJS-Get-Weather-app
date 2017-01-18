@@ -1,3 +1,5 @@
+
+##Getting Started 
  1. Git clone: `https://github.com/getwebem/ReactWeather.git`
  2. Open: `cd ReactWeather
  3. Run: `npm install`
