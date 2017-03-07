@@ -2,7 +2,7 @@
 ###**Getting started**
 ###Technologies Used: 
 ####HTML5, CSS3, React.js, Foundation 5, npm, Axios, Express, react-router, Sass, jQuery, Webpack, Babel, JSX, ES6, REST API
- - Run  :  `https://github.com/getwebem/ReactWeather.git`
+ - Run  :  `git clone https://github.com/getwebem/ReactWeather.git`
  - Run  :  `cd ReactWeather`
  - Run  :  `npm install`
  - Run  :  `npm start`
